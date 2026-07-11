@@ -1,0 +1,132 @@
+</motion.div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+// Expertise Section
+const Expertise = () => (
+  <section id="expertise" className="section-padding bg-neural-50">
+    <div className="section-container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-4 py-2 bg-primary-50 rounded-full text-primary-700 text-sm font-medium mb-4">
+            Areas of Expertise
+          </span>
+          <h2 className="heading-2 mb-4 text-neural-900">
+            Specialized Neurological Care
+            <br />
+            <span className="text-primary-600">Across the Spectrum</span>
+          </h2>
+          <p className="body-large text-neural-600">
+            From common headaches to complex movement disorders, Dr. Hina provides comprehensive
+            diagnosis and treatment for the full range of neurological conditions.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { icon: Brain, title: 'Epilepsy & Seizure Disorders', description: 'Advanced diagnostic evaluation, medication management, vagus nerve stimulation, and surgical referral for refractory epilepsy.', conditions: ['Focal Seizures', 'Generalized Epilepsy', 'Status Epilepticus', 'Epilepsy in Pregnancy'] },
+            { icon: Zap, title: 'Headache & Migraine', description: 'Comprehensive headache management including Botox for chronic migraine, CGRP inhibitors, and personalized prevention strategies.', conditions: ['Chronic Migraine', 'Cluster Headache', 'Tension Headache', 'Medication Overuse'] },
+            { icon: Activity, title: 'Movement Disorders', description: "Expert care for Parkinson's disease, essential tremor, dystonia, and other movement disorders including deep brain stimulation programming.", conditions: ["Parkinson's Disease", 'Essential Tremor', 'Dystonia', 'Ataxia'] },
+            { icon: Shield, title: 'Multiple Sclerosis & Neuroimmunology', description: 'Disease-modifying therapy selection, relapse management, and comprehensive MS care following latest treatment algorithms.', conditions: ['Relapsing MS', 'Progressive MS', 'NMOSD', 'MOGAD'] },
+            { icon: Microscope, title: 'Neuromuscular Disorders', description: 'Diagnosis and management of peripheral neuropathies, myopathies, and neuromuscular junction disorders.', conditions: ['Peripheral Neuropathy', 'Myasthenia Gravis', 'ALS', "Guillain-Barré"] },
+            { icon: Monitor, title: 'Clinical Neurophysiology', description: 'Advanced electrodiagnostic testing including EEG, EMG/NCS, evoked potentials, and intraoperative monitoring.', conditions: ['Video EEG', 'EMG/NCS', 'VEP/BAER/SEP', 'IOM'] },
+          ].map((exp, index) => (
+            <motion.article key={exp.title} variants={fadeInUp} className="card-hover bg-white rounded-2xl p-8 border border-neural-100">
+              <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center mb-6">
+                <exp.icon className="w-7 h-7 text-primary-600" aria-hidden="true" />
+              </div>
+              <h3 className="heading-4 mb-3 text-neural-900">{exp.title}</h3>
+              <p className="body text-neural-600 mb-6">{exp.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {exp.conditions.map((condition, i) => (
+                  <span key={condition} className="px-3 py-1 bg-neural-100 text-neural-700 text-sm rounded-full">{condition}</span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+// Why Choose Us Section
+const WhyChoose = () => (
+  <section id="why-choose" className="section-padding bg-white">
+    <div className="section-container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-4 py-2 bg-primary-50 rounded-full text-primary-700 text-sm font-medium mb-4">
+            Why Choose Us
+          </span>
+          <h2 className="heading-2 mb-4 text-neural-900">
+            Your Neurological Health
+            <br />
+            <span className="text-primary-600">Deserves the Best</span>
+          </h2>
+          <p className="body-large text-neural-600">
+            We combine world-class expertise with personalized attention to deliver outcomes that matter.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { icon: Heart, title: 'Patient-Centered Care', description: 'Every treatment plan is tailored to your unique needs, lifestyle, and goals. You\'re not a case number - you\'re a person.' },
+            { icon: Award, title: 'Academic Excellence', description: 'Trained at Johns Hopkins and Mayo Clinic. Board-certified with active research contributions and leadership in national neurology organizations.' },
+            { icon: Sparkles, title: 'Cutting-Edge Technology', description: 'State-of-the-art diagnostics including 3T MRI, video-EEG monitoring, and advanced neurophysiology testing on-site.' },
+            { icon: Users, title: 'Collaborative Approach', description: 'We coordinate seamlessly with your primary care, physical therapy, neurosurgery, and other specialists for comprehensive care.' },
+            { icon: Shield, title: 'Safety First', description: 'Evidence-based protocols, regular outcome tracking, and transparent communication about risks and benefits of every treatment option.' },
+            { icon: Clock, title: 'Accessible & Responsive', description: 'Same-week appointments for new patients. Direct portal messaging. After-hours coverage for urgent neurological concerns.' },
+          ].map((reason, index) => (
+            <motion.article key={reason.title} variants={fadeInUp} className="card-hover bg-neural-50 rounded-2xl p-8 border border-neural-100">
+              <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center mb-6">
+                <reason.icon className="w-7 h-7 text-primary-600" aria-hidden="true" />
+              </div>
+              <h3 className="heading-4 mb-3 text-neural-900">{reason.title}</h3>
+              <p className="body text-neural-600">{reason.description}</p>
+            </motion.article>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+// Patient Journey Section
+const PatientJourney = () => (
+  <section id="patient-journey" className="section-padding bg-neural-50">
+    <div className="section-container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-4 py-2 bg-primary-50 rounded-full text-primary-700 text-sm font-medium mb-4">
+            Your Path to Wellness
+          </span>
+          <h2 className="heading-2 mb-4 text-neural-900">
+            A Streamlined Process
+            <br />
+            <span className="text-primary-600">Designed Around You</span>
+          </h2>
+          <p className="body-large text-neural-600">
+            We've designed a patient journey that makes neurological care as smooth and effective as possible.
+          </p>
+        </motion.div>
+
+        <div className="relative">
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-neural-200 -translate
